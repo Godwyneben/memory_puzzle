@@ -3,9 +3,9 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.3em;
   text-align: center;
-  background: #1b1523;
-  color: fff;
+  background: rgb(16, 16, 40);
+  color: #fff;
 }
 
