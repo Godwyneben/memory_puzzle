@@ -15,15 +15,13 @@ button{
 }
 
 button:hover{
-  background: rgb(245, 3, 3);
+  background: rgb(255, 13, 13);
   color: #fff;
 }
 
 .card-grid{
   margin-top: 40px;
-  position: relative;
   justify-content: center;
-  align-items: center;
   cursor: pointer;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
