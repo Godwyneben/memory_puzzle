@@ -21,6 +21,10 @@ button:hover{
 
 .card-grid{
   margin-top: 40px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
