@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 
 const cardImages = [
-  { "src": "/img/collesseum.jpg" },
+  { "src": "/img/collosseum.jpg" },
   { "src": "/img/eiffle.jpg" },
   { "src": "/img/itza.jpg" },
   { "src": "/img/janeiro.jpg" },
@@ -22,7 +22,7 @@ const cardImages = [
     .sort(() => Math.random() - 0.5)
     .map((card) => ({ ...card, id: Math.random() }))
 
-    setCards(shuffleCards)
+    setCards(shuffledCards)
     setTurns(0)
   }
 
@@ -32,7 +32,17 @@ const cardImages = [
     <div className='App'>
       <h1>Card Puzzle</h1>
       <button onClick={shuffleCards}>New Game</button>
-      
+
+      <div className="card-grid">
+        {cards.map(card => (
+          <div className="card" key={card.id}>
+            <div>
+              <img src={card.src} alt="card front" className="front" />
+              <img src="/img/cover.jpg" alt="card back" className="back" />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
