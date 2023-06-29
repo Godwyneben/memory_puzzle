@@ -11,13 +11,12 @@ const cardImages = [
   { "src": "/img/statue.jpg", matched:false }
 ]
 
-
  function App() {
   const [cards, setCards] = useState([])
   const [turns, setTurns] = useState(0)
   const [choiceOne, setChoiceOne] = useState(null)
   const [choiceTwo, setChoiceTwo] = useState(null)
-
+  const [disabled, setDisabled] = useState(false)
 
   // shuffle cards 
   const shuffleCards = () => {
@@ -36,6 +35,7 @@ const cardImages = [
 
   // compare selected cards 
   useEffect(() => {
+    setDisabled(true)
     if (choiceOne && choiceTwo) {
 
       if (choiceOne.src === choiceTwo.src) {
@@ -62,9 +62,8 @@ const cardImages = [
     setChoiceOne(null)
     setChoiceTwo(null)
     setTurns(prevTurns => prevTurns + 1)
+    setDisabled(false)
   }
-
-
 
   return (
     <div className='App'>
@@ -77,6 +76,7 @@ const cardImages = [
           card={card}  
           handleChoice={handleChoice}
           flipped={card === choiceOne || card === choiceTwo || card.matched}
+          disabled={disabled}
           />
         ))}
       </div>
