@@ -37,6 +37,7 @@ const cardImages = [
   // compare selected cards 
   useEffect(() => {
     if (choiceOne && choiceTwo) {
+
       if (choiceOne.src === choiceTwo.src) {
         setCards(prevCards => {
           return prevCards.map(card => {
@@ -49,6 +50,7 @@ const cardImages = [
         })
         resetTurn()
       } else {
+        resetTurn()
       }
     }
   }, [choiceOne, choiceTwo])
