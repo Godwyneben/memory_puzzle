@@ -24,6 +24,8 @@ const cardImages = [
     .sort(() => Math.random() - 0.5)
     .map((card) => ({ ...card, id: Math.random() }))
 
+    setChoiceOne(null)
+    setChoiceTwo(null)
     setCards(shuffledCards)
     setTurns(0)
   }
@@ -64,6 +66,11 @@ const cardImages = [
     setDisabled(false)
   }
 
+  // start new game automatically 
+   useEffect(() => {
+    shuffleCards()
+   }, [])
+
   return (
     <div className='App'>
       <h1>Card Puzzle</h1>
@@ -79,6 +86,7 @@ const cardImages = [
           />
         ))}
       </div>
+      <p>Turns: {turns}</p>
     </div>
   )
 }
