@@ -50,7 +50,7 @@ const cardImages = [
         })
         resetTurn()
       } else {
-        resetTurn()
+        setTimeout(() => resetTurn(), 1000)
       }
     }
   }, [choiceOne, choiceTwo])
@@ -61,8 +61,9 @@ const cardImages = [
   const resetTurn = () => {
     setChoiceOne(null)
     setChoiceTwo(null)
-    setTurns(prevTurns = prevTurns + 1)
+    setTurns(prevTurns => prevTurns + 1)
   }
+
 
 
   return (
